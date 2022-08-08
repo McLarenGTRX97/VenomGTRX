@@ -5,4 +5,14 @@ start() {
     python3 -m venom
 }
 
+server() {
+    if test $APACHE2 ; then 
+        service apache2 restart
+        echo "Started..."
+    else
+        echo "Skipping..."
+    fi
+}
+
+server
 start
